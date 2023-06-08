@@ -1,23 +1,23 @@
 import React from "react"
 
-export default function TopButtons() {
+export default function TopButtons(props) {
 
     const cities = [
         {
             id:1,
-            title:'London'
+            title:'Colombo'
         },
         {
             id:2,
-            title:'Sydney'
+            title:'Kandy'
         },
         {
             id:3,
-            title:'Tokyo'
+            title:'Matara'
         },
         {
             id:4,
-            title:'Colombo'
+            title:'New York'
         },
         {
             id:5,
@@ -27,7 +27,7 @@ export default function TopButtons() {
     return (
         <div className="flex items-center justify-around my-6">
             {cities.map((city)=>(
-                <button key={city.id} className="text-white text-lg font-medium">{city.title}</button>
+                <button onClick={()=> props.setQuery({q:city.title})} key={city.id} className="text-white text-lg font-medium">{city.title}</button>
             ))}
         </div>
     )
